@@ -144,7 +144,7 @@ isProduction &&
           shortlistHeaderCTAlpMobile:
             "Clicked on Shrtlist Header CTA on Mobile",
         };
-
+        const redirectTrackEventProperties = { page: document.title };
         function initializeRedirectTracking(links) {
           links.forEach((link) => {
             trackRedirect(
@@ -207,11 +207,11 @@ isProduction &&
               console.log("Checkin Input", checkInInputValue);
               // check-out input
               const checkOutInputValue = inputs[2].value;
-              console.log("Checkout Check", checkOutInputValue);
               const trackingPayload = {
                 search: searchInputValue,
                 checkin: checkInInputValue,
                 checkout: checkOutInputValue,
+                ...redirectTrackEventProperties, // Merge additional properties
               };
 
               amplitude
@@ -235,11 +235,12 @@ isProduction &&
               console.log("Checkin Input", checkInInputValue);
               // check-out input
               const checkOutInputValue = inputs[7].value;
-              console.log("Checkout Check", checkOutInputValue);
+
               const trackingPayload = {
                 search: searchInputValue,
                 checkin: checkInInputValue,
                 checkout: checkOutInputValue,
+                ...redirectTrackEventProperties, // Merge additional properties
               };
 
               amplitude
@@ -253,7 +254,10 @@ isProduction &&
 
           submitButton?.addEventListener("click", () => {
             amplitude
-              .track(eventTypeDict[submitButtonId])
+              .track(
+                eventTypeDict[submitButtonId],
+                redirectTrackEventProperties
+              )
               .promise.then(function () {});
           });
         }
@@ -270,8 +274,10 @@ isProduction &&
 
           allAnchorTags?.forEach((aTag, i) => {
             aTag.addEventListener("click", () => {
-              const evProp = {};
-              evProp[eventPropName] = allHeadings[i].innerText;
+              const evProp = {
+                [eventPropName]: allHeadings[i].innerText,
+                ...redirectTrackEventProperties,
+              };
 
               amplitude
                 .track(eventTypeDict[containerId], evProp)
@@ -288,8 +294,10 @@ isProduction &&
             aTag.addEventListener("click", (e) => {
               const headingText = aTag?.querySelector("h3")?.innerText;
 
-              const evProp = {};
-              evProp[eventPropName] = headingText;
+              const evProp = {
+                [eventPropName]: headingText,
+                ...redirectTrackEventProperties,
+              };
 
               amplitude
                 .track(eventTypeDict[containerId], evProp)
@@ -307,8 +315,10 @@ isProduction &&
               console.log(headingText);
 
               if (headingText !== undefined) {
-                const evProp = {};
-                evProp[eventPropName] = headingText;
+                const evProp = {
+                  [eventPropName]: headingText,
+                  ...redirectTrackEventProperties,
+                };
 
                 amplitude
                   .track(eventTypeDict[containerId], evProp)
@@ -345,8 +355,6 @@ isProduction &&
         trackCms("dWashington", "Deals");
         trackCms("dMexico", "Deals");
         trackCms("dMexicoCity", "Deals");
-
-        const redirectTrackEventProperties = { page: document.title };
 
         const trackedLinks = [
           {
