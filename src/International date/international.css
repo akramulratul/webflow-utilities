@@ -1,0 +1,130 @@
+.hide {
+  display: none;
+}
+#valid-msg {
+  color: #10b981;
+}
+#error-msg {
+  color: #f43f5e;
+}
+
+.iti--separate-dial-code .iti__selected-flag {
+  border-radius: 50px 0 0 50px;
+  padding-left: 1.875rem;
+}
+.iti {
+  width: 100%;
+}
+.iti__arrow {
+  border-top: 0px solid #555 !important;
+}
+.iti__arrow--up {
+  border-top: none;
+  border-bottom: 0px solid #555 !important;
+}
+.iti__selected-dial-code {
+  font-size: 14px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #333333;
+  width: 35px;
+}
+.iti--separate-dial-code .iti__selected-flag {
+  background-color: white !important;
+}
+.intl-tel-input .iti__arrow::before {
+  content: none;
+}
+.iti__arrow {
+  margin-left: 0px !important;
+}
+
+.iti__divider {
+  display: none;
+}
+.iti__country-list {
+  max-width: 300px;
+  position: absolute;
+  z-index: 2;
+  list-style: none;
+  text-align: left;
+  padding: 8px;
+  margin: 0.5rem 0 0 -1px;
+  box-shadow: 0px 6px 10px 0px rgba(17, 22, 26, 0.08),
+    0px 1px 18px 0px rgba(17, 22, 26, 0.06),
+    0px 3px 5px 0px rgba(17, 22, 26, 0.1);
+  background-color: #fff;
+  border: 0px solid #ccc !important;
+  white-space: nowrap;
+  max-height: 200px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 20px;
+}
+.iti__country-name,
+.iti__flag-box {
+  /* overflow-wrap: break-word; */
+  white-space: normal;
+  /* line-height: 1.2; */
+}
+.iti__country-name {
+  /* overflow-wrap: break-word; */
+  margin-right: 0px !important;
+  /* line-height: 1.2; */
+}
+.iti__country {
+  outline: 0;
+  border-radius: 4px;
+  gap: 8px;
+  padding: 8px 8px 8px 24px !important;
+  align-items: center;
+}
+.iti--separate-dial-code .iti__selected-flag::after {
+  content: url("https://uploads-ssl.webflow.com/64831d82549ec5fa8630b6ff/65689b359fce3aa1be8566ec_dropdown.svg");
+}
+.iti-mobile .iti--container {
+  top: 643px;
+  bottom: 30px;
+  left: 84px;
+  right: 30px;
+  position: fixed;
+  height: 200px;
+}
+@media only screen and (max-width: 1024px) {
+  .iti-mobile .iti--container {
+    top: 722px;
+    bottom: 30px;
+    left: 46px;
+    right: 30px;
+    position: absolute;
+    height: 200px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .iti-mobile .iti--container {
+    top: 576px;
+    bottom: 30px;
+    left: 41px;
+    right: 30px;
+    position: absolute;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .iti-mobile .iti--container {
+    top: 545px;
+    bottom: 30px;
+    left: 21px;
+    right: 30px;
+    position: absolute;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .iti-mobile .iti--container {
+    top: 594px;
+    bottom: 30px;
+    left: 21px;
+    right: 30px;
+    position: absolute;
+  }
+}
