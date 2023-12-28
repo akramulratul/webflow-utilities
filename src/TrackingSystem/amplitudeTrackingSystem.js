@@ -93,9 +93,13 @@ isProduction &&
           extensionHeaderCTAlpMobile: "extensionHeaderCTAlpMobile",
           shortlistHeaderCTAlp: "shortlistHeaderCTAlp",
           shortlistHeaderCTAlpMobile: "shortlistHeaderCTAlpMobile",
+          shrtlist: "shrtlist",
+          shrtlstButton: "shrtlstButton",
         };
         const trackEventTexts = {
           howItWorksHeaderCTA: "Clicked on How it Works CTA",
+          shrtlist: "Clicked on Shrtlst Link",
+          shrtlstButton: "Clicked on shrtlst learn more",
           howItWorksHeaderCTAMobile: "Clicked on How it Works CTA on Mobile",
           exploreHotelsHeaderCTA: "Clicked on Explore Hotels Header CTA",
           exploreHotelsHeaderCTAMobile:
@@ -253,6 +257,12 @@ isProduction &&
 
         function trackFeedbackButtons(containerId, eventType, headingId) {
           const wrapper = document.querySelector(`#${containerId}`);
+
+          // Check if the wrapper element exists
+          if (!wrapper) {
+            console.error(`Container with ID '${containerId}' not found.`);
+            return;
+          }
           const yesButton = wrapper?.querySelector("#yesButton");
           const noButton = wrapper?.querySelector("#noButton");
           const allHeadings = wrapper?.querySelectorAll(
@@ -281,7 +291,7 @@ isProduction &&
               });
           });
 
-          noButton?.addEventListener("click", () => {
+          noButton.addEventListener("click", () => {
             const headingTexts = Array.from(allHeadings)
               .map((heading) => heading?.innerText)
               .filter((text) => text !== undefined);
@@ -298,8 +308,7 @@ isProduction &&
               });
           });
         }
-        // Usage
-        trackFeedbackButtons("feedbackFaq", "yesButtonEvent");
+
         function trackSignUp(submitButtonId) {
           const submitButton = document?.querySelector("#" + submitButtonId);
 
@@ -736,7 +745,24 @@ isProduction &&
             redirectUrl: "https://theguestbook.com/#shrtlst",
             shouldOpenInNewTab: true,
           },
-
+          {
+            hrefId: hrefIdDictionary.shrtlist,
+            trackEventText: trackEventTexts.shrtlist,
+            redirectTrackEventProperties: {
+              /* additional properties here */
+            },
+            redirectUrl: "https://shrtlst.com/",
+            shouldOpenInNewTab: true,
+          },
+          {
+            hrefId: hrefIdDictionary.shrtlstButton,
+            trackEventText: trackEventTexts.shrtlstButton,
+            redirectTrackEventProperties: {
+              /* additional properties here */
+            },
+            redirectUrl: "https://shrtlst.com/",
+            shouldOpenInNewTab: true,
+          },
           // Add any other links as needed
         ];
         // Initialize tracking on the defined links
@@ -750,6 +776,8 @@ isProduction &&
         trackDiscoverAndInsiders("tdiscover", "discover");
         trackDiscoverAndInsiders("insiders", "insider", "insiderName");
         // trackFeedback("feedbackFaq", "ClickButton");
+        // Usage
+        trackFeedbackButtons("feedbackFaq", "yesButtonEvent");
       });
     })
     .catch((error) => {
