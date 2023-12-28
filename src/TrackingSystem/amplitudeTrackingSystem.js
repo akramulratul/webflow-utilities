@@ -752,7 +752,7 @@ isProduction &&
               /* additional properties here */
             },
             redirectUrl: "https://shrtlst.com/",
-            shouldOpenInNewTab: true,
+            shouldOpenInNewTab: false,
           },
           {
             hrefId: hrefIdDictionary.shrtlstButton,
