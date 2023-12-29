@@ -95,11 +95,12 @@ isProduction &&
           shortlistHeaderCTAlpMobile: "shortlistHeaderCTAlpMobile",
           shrtlist: "shrtlist",
           shrtlstButton: "shrtlstButton",
+          shrtlsttop: "shrtlsttop",
         };
         const trackEventTexts = {
           howItWorksHeaderCTA: "Clicked on How it Works CTA",
-          shrtlist: "Clicked on Shrtlst Link",
-          shrtlstButton: "Clicked on shrtlst learn more",
+          shrtlist: "Clicked on Shrtlst Link Bottom",
+          shrtlstButton: "Clicked on shrtlst learn more Bottom",
           howItWorksHeaderCTAMobile: "Clicked on How it Works CTA on Mobile",
           exploreHotelsHeaderCTA: "Clicked on Explore Hotels Header CTA",
           exploreHotelsHeaderCTAMobile:
@@ -148,6 +149,7 @@ isProduction &&
           shortlistHeaderCTAlp: "Clicked on Shrtlist Header CTA",
           shortlistHeaderCTAlpMobile:
             "Clicked on Shrtlist Header CTA on Mobile",
+          shrtlsttop: "Clicked on Shrtlist Top",
         };
         const redirectTrackEventProperties = { page: document.title };
         function initializeRedirectTracking(links) {
@@ -761,6 +763,15 @@ isProduction &&
               /* additional properties here */
             },
             redirectUrl: "https://shrtlst.com/",
+            shouldOpenInNewTab: true,
+          },
+          {
+            hrefId: hrefIdDictionary.shrtlsttop,
+            trackEventText: trackEventTexts.shrtlsttop,
+            redirectTrackEventProperties: {
+              /* additional properties here */
+            },
+            redirectUrl: "https://www.shrtlst.com/",
             shouldOpenInNewTab: true,
           },
           // Add any other links as needed
