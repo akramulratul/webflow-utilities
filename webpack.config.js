@@ -3,7 +3,8 @@ const path = require("path");
 module.exports = {
   mode: "production",
   entry: {
-    ["trackingclick"]: "./src/TrackingSystem/amplitudeTrackingSystem.js",
+    ["trackingAmplitudeClick"]:
+      "./src/TrackingSystem/amplitudeTrackingSystem.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
