@@ -99,8 +99,8 @@ isProduction &&
         };
         const trackEventTexts = {
           howItWorksHeaderCTA: "Clicked on How it Works CTA",
-          shrtlist: "Clicked on Shrtlst Link Bottom",
-          shrtlstButton: "Clicked on shrtlst learn more Bottom",
+          shrtlist: "Clicked on Shrtlst CTA bottom",
+          shrtlstButton: "Clicked on Shrtlst CTA bottom",
           howItWorksHeaderCTAMobile: "Clicked on How it Works CTA on Mobile",
           exploreHotelsHeaderCTA: "Clicked on Explore Hotels Header CTA",
           exploreHotelsHeaderCTAMobile:
@@ -123,14 +123,14 @@ isProduction &&
           rewardExploringHotelMobile:
             "Clicked on Start Exploring hotels Reward Section on Mobile",
           addyourBrowserMobileLink:
-            "Clicked on Add your browser Extension Button Click by Mobile-Link",
+            "Clicked on Add Extension CTA - Add to your browser - Mobile",
           addyourBrowserChormeLink:
-            "Clicked on Add your browser Extension Button Click by Chrome browser",
+            "Clicked on Add Extension CTA - Add to your browser - Chrome",
           addyourBrowserSafaryLink:
-            "Clicked on Add your browser Extension Button Click by Safary browser",
+            "Clicked on Add Extension CTA - Add to your browser - Safary",
           addyourBrowserOtherLink:
-            "Clicked on Add your browser Extension Button Click by Other browser",
-          lmbrowser: "Clicked on Learnmore add extension",
+            "Clicked on Add Extension CTA - Add to your browser - Other browser",
+          lmbrowser: "Clicked on Add Extension CTA - Learn more",
           addurBrowserMobileLinkMdl:
             "Clicked on Add your browser Extension Button Click by Mobile-Link In Modal",
           addurBrowserChromeLinkMdl:
@@ -149,7 +149,7 @@ isProduction &&
           shortlistHeaderCTAlp: "Clicked on Shrtlist Header CTA",
           shortlistHeaderCTAlpMobile:
             "Clicked on Shrtlist Header CTA on Mobile",
-          shrtlsttop: "Clicked on Shrtlist Top",
+          shrtlsttop: "Clicked on Shrtlst CTA top",
         };
         const redirectTrackEventProperties = { page: document.title };
         function initializeRedirectTracking(links) {
